@@ -2,33 +2,24 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: MSc Student in Computer Science (Machine Intelligence), ETH Zürich
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Zürich, Switzerland</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
-
-announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+social: false # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I'm an MSc student in Computer Science, majoring in Machine Intelligence, at ETH Zürich. Before that, I completed my Bachelor's in Engineering of Computer Systems at Politecnico di Milano (110/110 with honors), with an exchange year at Universidad de Málaga.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I'm currently working on three research projects in parallel: turning the protein language model ESM2 into a generative model for antibody design via Direct Preference Optimization, with the [Learning & Adaptive Systems Group](https://las.inf.ethz.ch/) (Prof. Andreas Krause); building token-level probes to detect and steer generation degeneration in the LoRA-adapted Apertus-8B-Instruct model, with the [ETH AI Center](https://ai.ethz.ch/) Apertus group; and training a reinforcement learning agent to dynamically allocate resolution in 3D maps under a tight memory budget, with the [Computer Vision and Geometry Lab](https://cvg.ethz.ch/) (Daniel Barath).
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I'm broadly interested in machine learning for the natural sciences, language model interpretability and safety, and reinforcement learning. You can find more details on my [resume](/cv/) and [projects](/projects/) pages.
+
+Feel free to [reach out](mailto:mdenegri@ethz.ch) if you'd like to chat about research, collaborate, or just say hi.
+
+<p><strong>Contacts:</strong> <a href="mailto:mdenegri@ethz.ch">mdenegri@ethz.ch</a> &#124; <a href="https://github.com/marcodene" target="_blank">GitHub</a> &#124; <a href="https://www.linkedin.com/in/denegrimarco" target="_blank">LinkedIn</a></p>
