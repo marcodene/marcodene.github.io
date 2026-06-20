@@ -1,0 +1,139 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---- Encoding & fonts ----
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}                       % Latin Modern (improved Computer Modern)
+
+% ---- Page geometry ----
+\usepackage[top=1.0cm, bottom=1.0cm, left=1.7cm, right=1.7cm]{geometry}
+
+% ---- Typography ----
+\usepackage{microtype} 
+
+% ---- Section headings ----
+\usepackage{titlesec}
+\titleformat{\section}
+  {\bfseries\normalsize}   % format: bold, same size as body
+  {}                        % label
+  {0em}                     % sep
+  {}                        % before-code
+  [\vspace{1pt}\hrule\vspace{2pt}]  % after-code: thin rule
+\titlespacing*{\section}{0pt}{10pt}{4pt} 
+
+% ---- Lists ----
+\usepackage{enumitem}
+\setlist[itemize]{
+  label=\textbullet,
+  leftmargin=2em,
+  itemsep=0pt,
+  parsep=0pt,
+  topsep=2pt,
+  partopsep=0pt
+}
+
+% ---- Hyperlinks ----
+\usepackage[hidelinks,colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+
+% ---- Misc ----
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\pagestyle{empty}
+
+% ---- Helper: two-column entry row ----
+% Usage: \entryrow{Left text}{Right text}
+\newcommand{\entryrow}[2]{%
+  \noindent#1\hfill#2\par\vspace{0pt}%
+}
+
+\begin{document}
+
+% ============================================================
+%  HEADER
+% ============================================================
+{\fontsize{26}{30}\selectfont\textbf{MARCO DE NEGRI}}\par
+\vspace{2pt}
+\textit{22-05-2003, Zürich, Switzerland.}\par
++39 342 811 7714 \textbar{} \href{mailto:mdenegri@ethz.ch}{mdenegri@ethz.ch} \textbar{} \href{https://www.linkedin.com/in/denegrimarco}{Linkedin: denegrimarco} \textbar{} \href{https://github.com/marcodene}{GitHub: marcodene}
+
+\vspace{-6pt}
+
+% ============================================================
+%  PROJECTS & EXPERIENCES
+% ============================================================
+\section{PROJECTS \& EXPERIENCES}
+
+\noindent{\small\textbf{Learning \& Adaptive Systems Group (Prof. Andreas Krause, Scott Sussex)}\hfill\textbf{Zürich, Switzerland}}\\[-2pt]
+\textit{Generative Antibody Design with Protein Language Models}\hfill Spring 2026 -- present
+\begin{itemize}
+  \item Turning ESM2, a masked protein language model, into a generative model for antibody design, fine-tuning on yeast-display binding data via Direct Preference Optimization (DPO) to generate higher-affinity CDR-H3 variants of the C05 broadly neutralizing anti-flu antibody.
+  \item Showed that evotuning (unsupervised fine-tuning on antibody sequence databases) gives a better starting point for DPO than the vanilla model, especially in the low-data regime, reaching a Spearman correlation of 0.65 between model scores and experimental binding on held-out test sets.
+  \item Generated novel antibody variants via both Gibbs sampling and beam search decoding; all training and inference run on the ETH Euler HPC cluster.
+\end{itemize}
+
+\vspace{4pt}
+\noindent{\small\textbf{ETH AI Center (Apertus group)}\hfill\textbf{Zürich, Switzerland}}\\[-2pt]
+\textit{Training and Visualising Degeneration Apertus Probes}\hfill Spring 2026 -- present
+\begin{itemize}
+  \item Built a token-level degeneration probe on LoRA-adapted Apertus-8B-Instruct hidden states, trained on 83K labelled completions via a sliding-window repetition score, reaching 0.92 F1 (99.9\% recall) at flagging degenerating tokens before generation visibly collapses; project carried out in collaboration with Anna Hedström, Valentina Pyatkin, and Eduard Durech (ETH AI Center / IVIA Lab).
+  \item Found via PCA that LoRA adaptation makes degenerate and healthy tokens more linearly separable, and used the probe to steer generations toward safe regions and trigger early stopping during training, cutting wasted RL/SFT compute; built an interactive dashboard for diagnostics, with training and inference run on the Alps supercomputer (CSCS).
+\end{itemize}
+
+\vspace{4pt}
+\noindent{\small\textbf{Computer Vision and Geometry Lab, ETH Zürich (Daniel Barath)}\hfill\textbf{Zürich, Switzerland}}\\[-2pt]
+\textit{Goal-driven 3D Map Generation with Reinforcement Learning}\hfill Spring 2026
+\begin{itemize}
+  \item Trained an RL agent using PPO to dynamically allocate resolution in a 3D map, learning to keep high detail in regions relevant to the task at hand while compressing the rest, under a tight memory budget.
+  \item Built a Python library for 3D maps with online adaptive resolution (incremental delta-buffer updates, raycasting-based false-obstacle pruning) and integrated it with the PEANUT navigation agent in the AI Habitat simulator, cutting memory usage by 88.6\% in test episodes while maintaining task success.
+\end{itemize}
+
+% ============================================================
+%  EDUCATION
+% ============================================================
+\section{EDUCATION}
+
+\noindent\textbf{ETH Zürich}\hfill\textbf{Zürich, Switzerland}\\[-2pt]
+\textit{Master of Science in Computer Science}\hfill September 2025 - present\\[-2pt]
+\textit{Major in Machine Intelligence}\hfill \textbf{GPA: 5.63/6.0}
+
+\vspace{4pt}
+\noindent\textbf{Politecnico di Milano}\hfill\textbf{Milan, Italy}\\[-2pt]
+\textit{Bachelor's in Engineering of Computer Systems}\hfill September 2022 -  July 2025\\[-2pt]
+\hfill Final Grade: 110/110 with honors
+\begin{itemize}
+  \item \textbf{Honors:} ``Best Freshmen Youth Fund'' issued by Politecnico di Milano.
+  \item Tuition tax exemption for 2 years (merit-based).
+\end{itemize}
+
+\vspace{4pt}
+\noindent\textbf{Universidad de Málaga}\hfill\textbf{Malaga, Spain}\\[-2pt]
+\textit{Erasmus+}\hfill September 2024 - February 2025
+
+\vspace{4pt}
+\noindent\textbf{University of California, Santa Barbara (UCSB)}\hfill\textbf{Santa Barbara, California}\\[-2pt]
+\textit{Summer Session in Communication}\hfill August 2023
+
+% ============================================================
+%  SKILLS
+% ============================================================ 
+\section{SKILLS}
+
+\begin{itemize}
+  \item \textbf{Programming Languages:} Python, Java, C/C++, JavaScript/TypeScript, SQL, LaTeX
+  \item \textbf{ML \& Data:} PyTorch, HuggingFace Transformers, NumPy, pandas, scikit-learn, Matplotlib, W\&B
+  \item \textbf{Tools \& Infrastructure:} Git, Linux, SLURM (Euler HPC), Docker, React, Next.js
+\end{itemize}
+
+% ============================================================
+%  LANGUAGES
+% ============================================================
+\section{LANGUAGES}
+
+\begin{itemize}
+  \item Italian - Native
+  \item English - C1 (IELTS, Band 7 - July 2024)
+\end{itemize}
+
+
+\end{document}

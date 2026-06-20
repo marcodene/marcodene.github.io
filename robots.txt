@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://marcodene.github.io/sitemap.xml
