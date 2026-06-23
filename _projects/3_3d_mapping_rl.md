@@ -5,6 +5,17 @@ description: An RL agent that dynamically allocates resolution in a 3D map under
 importance: 3
 category: research
 related_publications: false
+authors:
+  - Lorenzo Baggi
+  - Marco De Negri
+  - Vassili De Palma
+  - Alessio Salvatore
+more_authors:
+  - Daniel Barath
+  - Jelena Trisovic
+group: Computer Vision and Geometry Lab, ETH Zürich
+period: Spring 2026
+website: https://marcodene.github.io/3dv.github.io/
 ---
 
 *This page is still a work in progress — for now it's just a quick summary of the project.*

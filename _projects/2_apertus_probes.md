@@ -5,6 +5,17 @@ description: Token-level probes to detect and steer generation degeneration in a
 importance: 2
 category: research
 related_publications: false
+authors:
+  - Lorenzo Baggi
+  - Marco De Negri
+  - Moritz Reihs
+  - Luca Sartori
+more_authors:
+  - Eduard Durech
+  - Anna Hedström
+  - Valentina Pyatkin
+group: ETH AI Center, Apertus Group
+period: Spring 2026 – present
 ---
 
 *This page is still a work in progress — for now it's just a quick summary of the project.*

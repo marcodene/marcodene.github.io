@@ -5,6 +5,14 @@ description: Fine-tuning ESM2 with Direct Preference Optimization to generate hi
 importance: 1
 category: research
 related_publications: false
+authors:
+  - Marco De Negri
+  - Giovanni Guidarini
+more_authors:
+  - Andreas Krause
+  - Scott Sussex
+group: Learning & Adaptive Systems Group, ETH Zürich
+period: Spring 2026 – present
 ---
 
 *This page is still a work in progress — for now it's just a quick summary of the project.*
