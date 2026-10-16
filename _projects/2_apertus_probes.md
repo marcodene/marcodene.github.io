@@ -1,27 +1,29 @@
 ---
 layout: page
-title: Training and Visualising Degeneration Apertus Probes
-description: Token-level probes to detect and steer generation degeneration in a LoRA-adapted LLM.
-importance: 2
+title: Degeneration Detection Is Not Early Warning
+description: Linear probes on LLM hidden states that warn, token by token, before a model falls into a repetitive loop. Accepted at the NeurIPS 2026 Workshop on Interpretability as a Science.
+importance: 1
 category: research
 related_publications: false
 authors:
-  - Lorenzo Baggi
   - Marco De Negri
-  - Moritz Reihs
   - Luca Sartori
+  - Lorenzo Baggi
+  - Moritz Reihs
 more_authors:
-  - Eduard Durech
-  - Anna Hedström
+  - Eduard F. Ďurech
+  - Mennatallah El-Assady
   - Valentina Pyatkin
+  - Anna Hedström
 group: ETH AI Center, Apertus Group
-period: Spring 2026 – present
+period: Spring 2026
+# pdf: https://arxiv.org/abs/XXXX.XXXXX  # TODO: add once the arXiv preprint is out
 ---
 
-*This page is still a work in progress — for now it's just a quick summary of the project.*
+_This page is still a work in progress — for now it's just a quick summary of the project._
 
-**ETH AI Center, Apertus group** — Spring 2026 – present
+**ETH AI Center, Apertus group** — Spring 2026 · Accepted at the NeurIPS 2026 Workshop: Interpretability as a Science
 
-Built a token-level degeneration probe on LoRA-adapted Apertus-8B-Instruct hidden states, trained on 83K labelled completions via a sliding-window repetition score, reaching 0.92 F1 (99.9% recall) at flagging degenerating tokens before generation visibly collapses; project carried out in collaboration with Anna Hedström, Valentina Pyatkin, and Eduard Durech (ETH AI Center / IVIA Lab).
+Trained linear probes on the hidden states of Apertus-8B, Llama-3.1-8B and Mistral-7B to warn, token by token, that a model is about to fall into a repetitive loop, before it shows in the text.
 
-Found via PCA that LoRA adaptation makes degenerate and healthy tokens more linearly separable, and used the probe to steer generations toward safe regions and trigger early stopping during training, cutting wasted RL/SFT compute. Built an interactive dashboard for diagnostics, with training and inference run on the Alps supercomputer (CSCS).
+Proposed ONWARD, an evaluation that fixes the false-alarm rate on healthy responses and scores alarms against a human-verified failure onset. Showed that AUROC saturates on this task and cannot tell an early warning from a late detection, and that LoRA adaptation below the probe more than doubles warning coverage on all three models. All experiments run on the Alps supercomputer (CSCS).

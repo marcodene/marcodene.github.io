@@ -53,6 +53,15 @@ cv:
         end_date: 2023-08
 
     Experience:
+      - company: ETH AI Center (Apertus group)
+        position: "Degeneration Detection Is Not Early Warning (accepted at NeurIPS 2026 Workshop)"
+        location: Zürich, Switzerland
+        start_date: 2026-02
+        end_date: 2026-10
+        highlights:
+          - Trained linear probes on the hidden states of Apertus-8B, Llama-3.1-8B and Mistral-7B to warn, token by token, that a model is about to fall into a repetitive loop, before it shows in the text.
+          - Proposed ONWARD, an evaluation that fixes the false-alarm rate on healthy responses and scores alarms against a human-verified failure onset; showed that AUROC saturates on this task and cannot tell an early warning from a late detection, and that LoRA adaptation below the probe more than doubles warning coverage on all three models. Run on the Alps supercomputer (CSCS).
+
       - company: Learning & Adaptive Systems Group, ETH Zürich (Prof. Andreas Krause, Scott Sussex)
         position: "Research Project: Generative Antibody Design with Protein Language Models"
         location: Zürich, Switzerland
@@ -61,25 +70,27 @@ cv:
         highlights:
           - Turning ESM2, a masked protein language model, into a generative model for antibody design, fine-tuning on yeast-display binding data via Direct Preference Optimization (DPO) to generate higher-affinity CDR-H3 variants of the C05 broadly neutralizing anti-flu antibody.
           - Showed that evotuning (unsupervised fine-tuning on antibody sequence databases) gives a better starting point for DPO than the vanilla model, especially in the low-data regime, reaching a Spearman correlation of 0.65 between model scores and experimental binding on held-out test sets.
-          - Generated novel antibody variants via both Gibbs sampling and beam search decoding; all training and inference run on the ETH Euler HPC cluster.
-
-      - company: ETH AI Center (Apertus group)
-        position: "Research Project: Training and Visualising Degeneration Apertus Probes"
-        location: Zürich, Switzerland
-        start_date: 2026-02
-        end_date: present
-        highlights:
-          - Built a token-level degeneration probe on LoRA-adapted Apertus-8B-Instruct hidden states, trained on 83K labelled completions via a sliding-window repetition score, reaching 0.92 F1 (99.9% recall) at flagging degenerating tokens before generation visibly collapses; carried out in collaboration with Anna Hedström, Valentina Pyatkin, and Eduard Durech (ETH AI Center / IVIA Lab).
-          - Found via PCA that LoRA adaptation makes degenerate and healthy tokens more linearly separable, and used the probe to steer generations toward safe regions and trigger early stopping during training, cutting wasted RL/SFT compute; built an interactive dashboard for diagnostics, with training and inference run on the Alps supercomputer (CSCS).
+          - Generated novel variants via Gibbs sampling and beam search on the ETH Euler HPC cluster.
 
       - company: Computer Vision and Geometry Lab, ETH Zürich (Daniel Barath)
         position: "Research Project: Goal-driven 3D Map Generation with Reinforcement Learning"
         location: Zürich, Switzerland
         start_date: 2026-02
         end_date: 2026-06
+        url: https://marcodenegri.com/3dv.github.io/
         highlights:
-          - Trained an RL agent using PPO to dynamically allocate resolution in a 3D map, learning to keep high detail in regions relevant to the task at hand while compressing the rest, under a tight memory budget.
-          - Built a Python library for 3D maps with online adaptive resolution (incremental delta-buffer updates, raycasting-based false-obstacle pruning) and integrated it with the PEANUT navigation agent in the AI Habitat simulator, cutting memory usage by 88.6% in test episodes while maintaining task success.
+          - Trained an RL agent using PPO to dynamically allocate resolution in a 3D map, keeping high detail only where relevant to the task under a tight memory budget, and built a supporting Python library with online adaptive resolution, integrated with the PEANUT navigation agent in the AI Habitat simulator, cutting memory usage by 88.6% in test episodes while maintaining task success.
+
+    Publications:
+      - name: Degeneration Detection Is Not Early Warning
+        publisher: "NeurIPS 2026 Workshop: Interpretability as a Science"
+        releaseDate: 2026
+        summary: "M. De Negri, L. Sartori, L. Baggi, M. Reihs, E. F. Ďurech, M. El-Assady, V. Pyatkin, A. Hedström"
+      - name: "From Open Text Models to Open Multimodal Reasoners: Apertus v1.5 Technical Report"
+        publisher: arXiv:2610.15542
+        releaseDate: 2026
+        url: https://arxiv.org/abs/2610.15542
+        summary: "Project Apertus (M. De Negri, contributor, Interpretability team)"
 
     Skills:
       - name: Programming Languages
