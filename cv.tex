@@ -19,7 +19,7 @@
   {0em}                     % sep
   {}                        % before-code
   [\vspace{1pt}\hrule\vspace{2pt}]  % after-code: thin rule
-\titlespacing*{\section}{0pt}{10pt}{4pt} 
+\titlespacing*{\section}{0pt}{7pt}{4pt} 
 
 % ---- Lists ----
 \usepackage{enumitem}
@@ -55,37 +55,46 @@
 {\fontsize{26}{30}\selectfont\textbf{MARCO DE NEGRI}}\par
 \vspace{2pt}
 \textit{22-05-2003, Zürich, Switzerland.}\par
-+39 342 811 7714 \textbar{} \href{mailto:mdenegri@ethz.ch}{mdenegri@ethz.ch} \textbar{} \href{https://www.linkedin.com/in/denegrimarco}{Linkedin: denegrimarco} \textbar{} \href{https://github.com/marcodene}{GitHub: marcodene}
+\href{mailto:mdenegri@ethz.ch}{mdenegri@ethz.ch} \textbar{} \href{https://marcodenegri.com/}{Website: marcodenegri.com} \textbar{} \href{https://www.linkedin.com/in/denegrimarco}{Linkedin: denegrimarco} \textbar{} \href{https://github.com/marcodene}{GitHub: marcodene}
 
 \vspace{-6pt}
 
 % ============================================================
 %  PROJECTS & EXPERIENCES
 % ============================================================
-\section{PROJECTS \& EXPERIENCES}
+\section{RESEARCH}
 
+\noindent{\small\textbf{ETH AI Center (Apertus group)}\hfill\textbf{Zürich, Switzerland}}\\[-2pt]
+\textit{Degeneration Detection Is Not Early Warning -- accepted at NeurIPS 2026 Workshop}\hfill Spring 2026
+\begin{itemize}
+  \item Trained linear probes on the hidden states of Apertus-8B, Llama-3.1-8B and Mistral-7B to warn, token by token, that a model is about to fall into a repetitive loop, before it shows in the text.
+  \item Proposed ONWARD, an evaluation that fixes the false-alarm rate on healthy responses and scores alarms against a human-verified failure onset; showed that AUROC saturates on this task and cannot tell an early warning from a late detection, and that LoRA adaptation below the probe more than doubles warning coverage on all three models. Run on the Alps supercomputer (CSCS).
+\end{itemize}
+
+\vspace{2pt}
 \noindent{\small\textbf{Learning \& Adaptive Systems Group (Prof. Andreas Krause, Scott Sussex)}\hfill\textbf{Zürich, Switzerland}}\\[-2pt]
 \textit{Generative Antibody Design with Protein Language Models}\hfill Spring 2026 -- present
 \begin{itemize}
   \item Turning ESM2, a masked protein language model, into a generative model for antibody design, fine-tuning on yeast-display binding data via Direct Preference Optimization (DPO) to generate higher-affinity CDR-H3 variants of the C05 broadly neutralizing anti-flu antibody.
   \item Showed that evotuning (unsupervised fine-tuning on antibody sequence databases) gives a better starting point for DPO than the vanilla model, especially in the low-data regime, reaching a Spearman correlation of 0.65 between model scores and experimental binding on held-out test sets.
-  \item Generated novel antibody variants via both Gibbs sampling and beam search decoding; all training and inference run on the ETH Euler HPC cluster.
+  \item Generated novel variants via Gibbs sampling and beam search on the ETH Euler HPC cluster.
 \end{itemize}
 
-\vspace{4pt}
-\noindent{\small\textbf{ETH AI Center (Apertus group)}\hfill\textbf{Zürich, Switzerland}}\\[-2pt]
-\textit{Training and Visualising Degeneration Apertus Probes}\hfill Spring 2026 -- present
-\begin{itemize}
-  \item Built a token-level degeneration probe on LoRA-adapted Apertus-8B-Instruct hidden states, trained on 83K labelled completions via a sliding-window repetition score, reaching 0.92 F1 (99.9\% recall) at flagging degenerating tokens before generation visibly collapses; project carried out in collaboration with Anna Hedström, Valentina Pyatkin, and Eduard Durech (ETH AI Center / IVIA Lab).
-  \item Found via PCA that LoRA adaptation makes degenerate and healthy tokens more linearly separable, and used the probe to steer generations toward safe regions and trigger early stopping during training, cutting wasted RL/SFT compute; built an interactive dashboard for diagnostics, with training and inference run on the Alps supercomputer (CSCS).
-\end{itemize}
-
-\vspace{4pt}
+\vspace{2pt}
 \noindent{\small\textbf{Computer Vision and Geometry Lab, ETH Zürich (Daniel Barath)}\hfill\textbf{Zürich, Switzerland}}\\[-2pt]
-\textit{Goal-driven 3D Map Generation with Reinforcement Learning}\hfill Spring 2026
+\textit{Goal-driven 3D Map Generation with Reinforcement Learning} \textbar{} \href{https://marcodenegri.com/3dv.github.io/}{Project Website}\hfill Spring 2026
 \begin{itemize}
-  \item Trained an RL agent using PPO to dynamically allocate resolution in a 3D map, learning to keep high detail in regions relevant to the task at hand while compressing the rest, under a tight memory budget.
-  \item Built a Python library for 3D maps with online adaptive resolution (incremental delta-buffer updates, raycasting-based false-obstacle pruning) and integrated it with the PEANUT navigation agent in the AI Habitat simulator, cutting memory usage by 88.6\% in test episodes while maintaining task success.
+  \item Trained an RL agent using PPO to dynamically allocate resolution in a 3D map, keeping high detail only where relevant to the task under a tight memory budget, and built a supporting Python library with online adaptive resolution, integrated with the PEANUT navigation agent in the AI Habitat simulator, cutting memory usage by 88.6\% in test episodes while maintaining task success.
+\end{itemize}
+
+% ============================================================
+%  PUBLICATIONS
+% ============================================================
+\section{PUBLICATIONS}
+
+\begin{itemize}
+  \item \textbf{M. De Negri}, L. Sartori, L. Baggi, M. Reihs, E. F. \v{D}urech, M. El-Assady, V. Pyatkin, A. Hedström. \textit{Degeneration Detection Is Not Early Warning.} NeurIPS 2026 Workshop: Interpretability as a Science.
+  \item Project Apertus (\textbf{M. De Negri}, contributor, Interpretability team). \textit{From Open Text Models to Open Multimodal Reasoners: Apertus v1.5 Technical Report.} \href{https://arxiv.org/abs/2610.15542}{arXiv:2610.15542}, 2026.
 \end{itemize}
 
 % ============================================================
@@ -97,7 +106,7 @@
 \textit{Master of Science in Computer Science}\hfill September 2025 - present\\[-2pt]
 \textit{Major in Machine Intelligence}\hfill \textbf{GPA: 5.63/6.0}
 
-\vspace{4pt}
+\vspace{2pt}
 \noindent\textbf{Politecnico di Milano}\hfill\textbf{Milan, Italy}\\[-2pt]
 \textit{Bachelor's in Engineering of Computer Systems}\hfill September 2022 -  July 2025\\[-2pt]
 \hfill Final Grade: 110/110 with honors
@@ -106,11 +115,11 @@
   \item Tuition tax exemption for 2 years (merit-based).
 \end{itemize}
 
-\vspace{4pt}
+\vspace{2pt}
 \noindent\textbf{Universidad de Málaga}\hfill\textbf{Malaga, Spain}\\[-2pt]
 \textit{Erasmus+}\hfill September 2024 - February 2025
 
-\vspace{4pt}
+\vspace{2pt}
 \noindent\textbf{University of California, Santa Barbara (UCSB)}\hfill\textbf{Santa Barbara, California}\\[-2pt]
 \textit{Summer Session in Communication}\hfill August 2023
 
@@ -131,8 +140,7 @@
 \section{LANGUAGES}
 
 \begin{itemize}
-  \item Italian - Native
-  \item English - C1 (IELTS, Band 7 - July 2024)
+  \item Italian - Native \textbar{} English - C1 (IELTS, Band 7 - July 2024)
 \end{itemize}
 
 
